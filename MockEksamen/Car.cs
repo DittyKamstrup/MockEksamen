@@ -11,25 +11,56 @@ namespace MockEksamen
     public class Car
     {
         //INSTANS FIELDS
+        private int doors;
+        private string model;
+        private string registrationNo;
         private Color _color;
+        private Owner owner;
 
-        //PROPERTIES
-        public int Doors { get; set; }
-          
-        //Til håndtering af ændring af variabel, ikke fuldent
-        //{
-            //get { return door; }
-            //set {
-            //    if (door > 5 || door < 2)
-            //    {
-            //        throw new ArgumentOutOfRangeException("Der kan være mellem 2 til 5 døre!");
-            //    }
-            //    door = value; }
-        //}
+        public int Doors
+        {
+            get { return doors; }
+            set
+            {
+                if (value > 5 || value < 2)
+                {
+                    throw new ArgumentOutOfRangeException("Der kan være mellem 2 til 5 døre!");
+                }
+                doors = value;
+            }
+        }
 
-        public string Model { get; set; }
-        public string RegistrationNo { get; set; }
-        public Owner _owner { get; set; }
+        public string Model
+        {
+            get { return model; }
+            set
+            {
+                if (value.Equals(null))
+                {
+                    throw new NullReferenceException("Model skal angives!");
+                }
+                model = value;
+            }
+        }
+
+        public string RegistrationNo
+        {
+            get { return registrationNo; }
+            set
+            {
+                if (value.Length < 7 || value.Length > 7)
+                {
+                    throw new ArgumentOutOfRangeException("Registrerings nr skal være på 7 tegn!");
+                }
+                registrationNo = value;
+            }
+        }
+
+        public Owner CarOwner
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
 
         /// <summary>
         /// CONSTRUCTOR UDEN OWNER
@@ -60,7 +91,7 @@ namespace MockEksamen
             Doors = doors;
             Model = model;
             RegistrationNo = registrationNo;
-            _owner = owner;
+            CarOwner = owner;
 
 
             switch (color)
@@ -74,22 +105,6 @@ namespace MockEksamen
 
                 default: throw new ArgumentOutOfRangeException("Kan kun indskrive følgende farver: Black, Blue, Gray, Green, Red, White!");
             }
-
-            if (doors > 5 || doors < 2)
-            {
-                throw new ArgumentOutOfRangeException("Der kan være mellem 2 til 5 døre!");
-            }
-
-            if (model.Equals(null))
-            {
-                throw new NullReferenceException("Model skal angives!");
-            }
-
-            if (registrationNo.Length < 7 || registrationNo.Length > 7)
-            {
-                throw new ArgumentOutOfRangeException("Registrerings nr skal være på 7 tegn!");
-            }
         }
-
     }
 }
