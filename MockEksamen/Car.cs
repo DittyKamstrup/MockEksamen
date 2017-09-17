@@ -18,6 +18,10 @@ namespace MockEksamen
         private Owner owner;
 
         //FULL PROPERTIES
+
+        /// <summary>
+        /// Doors er sat så der skal angives en værdi mellem 2 & 5 døre
+        /// </summary>
         public int Doors
         {
             get { return doors; }
@@ -30,7 +34,9 @@ namespace MockEksamen
                 doors = value;
             }
         }
-
+        /// <summary>
+        /// Model er sat så den skal navngives og kan derved ikke være null
+        /// </summary>
         public string Model
         {
             get { return model; }
@@ -44,6 +50,9 @@ namespace MockEksamen
             }
         }
 
+        /// <summary>
+        /// RegistrationNo er sat så den skal være på 7 tegn
+        /// </summary>
         public string RegistrationNo
         {
             get { return registrationNo; }

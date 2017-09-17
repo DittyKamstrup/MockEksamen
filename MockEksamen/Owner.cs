@@ -8,7 +8,7 @@ namespace MockEksamen
 {
     public class Owner
     {
-        //PROPERTIES
+        //AUTO PROPERTIES
         public string Address { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
