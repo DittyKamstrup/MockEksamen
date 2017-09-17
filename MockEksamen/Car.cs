@@ -10,7 +10,7 @@ namespace MockEksamen
     public enum Color { Black, White, Gray, Red, Green, Blue }
     public class Car
     {
-        //INSTANS FIELDS
+        //INSTANCE FIELDS
         private int doors;
         private string model;
         private string registrationNo;
