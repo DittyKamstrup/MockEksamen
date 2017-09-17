@@ -17,6 +17,7 @@ namespace MockEksamen
         private Color _color;
         private Owner owner;
 
+        //FULL PROPERTIES
         public int Doors
         {
             get { return doors; }
@@ -56,6 +57,8 @@ namespace MockEksamen
             }
         }
 
+
+        //AUTO PROPERTIES
         public Owner CarOwner
         {
             get { return owner; }
@@ -63,7 +66,7 @@ namespace MockEksamen
         }
 
         /// <summary>
-        /// CONSTRUCTOR UDEN OWNER
+        /// Constructor til en Car objekt uden en Owner
         /// </summary>
         /// <param name="color"></param>
         /// <param name="doors"></param>
@@ -75,10 +78,23 @@ namespace MockEksamen
             Doors = doors;
             Model = model;
             RegistrationNo = registrationNo;
+
+            //Da Color er en enum og derfor kun kan sættes som de fastsatte farver, så er denne switch ikke nødvendig
+            switch (color)
+            {
+                case Color.Black: break;
+                case Color.Blue: break;
+                case Color.Gray: break;
+                case Color.Green: break;
+                case Color.Red: break;
+                case Color.White: break;
+
+                default: throw new ArgumentOutOfRangeException("Kan kun indskrive følgende farver: Black, Blue, Gray, Green, Red, White!");
+            }
         }
 
         /// <summary>
-        /// OVERLOADING CONSTRUCTOR MED OWNER
+        /// Overloading Constructor til en Car objekt med en Owner
         /// </summary>
         /// <param name="color"></param>
         /// <param name="doors"></param>
@@ -93,7 +109,7 @@ namespace MockEksamen
             RegistrationNo = registrationNo;
             CarOwner = owner;
 
-
+            //Da Color er en enum og derfor kun kan sættes som de fastsatte farver, så er denne switch ikke nødvendig
             switch (color)
             {
                 case Color.Black: break;
