@@ -10,7 +10,9 @@ namespace MockEksamen
     public enum Color { Black, White, Gray, Red, Green, Blue }
     public class Car
     {
-        //INSTANCE FIELDS
+        /// <summary>
+        /// INSTANCE FIELDS
+        /// </summary>
         private int doors;
         private string model;
         private string registrationNo;
@@ -66,8 +68,9 @@ namespace MockEksamen
             }
         }
 
-
-        //AUTO PROPERTIES
+        /// <summary>
+        /// AUTO PROPERTIES
+        /// </summary>
         public Owner CarOwner
         {
             get { return owner; }
