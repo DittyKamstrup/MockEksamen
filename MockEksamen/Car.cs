@@ -19,7 +19,7 @@ namespace MockEksamen
         private Color _color;
         private Owner owner;
 
-        //FULL PROPERTIES
+        ///FULL PROPERTIES
 
         /// <summary>
         /// Doors er sat så der skal angives en værdi mellem 2 & 5 døre
